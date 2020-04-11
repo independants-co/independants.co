@@ -1,0 +1,13 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the objectifs page of the site/application.
+// -------------------------------------------------------------------------------
+
+
+#objectifs {
+	p {
+		font-size: $font-size-4;
+		@media screen and (max-width: $breakpoint-xs) {
+			font-size: 1.666rem;
+		}
+	}
+}

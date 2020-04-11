@@ -1,0 +1,25 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the demarche page of the site/application.
+// -------------------------------------------------------------------------------
+
+
+#demarche {
+	.phases {
+		.phase {
+			@media screen and (min-width: $breakpoint-sm) {
+				padding-right: $space-8; 
+			}
+			&:nth-child(1) .phase__number { opacity: 0.6; }
+			&:nth-child(2) .phase__number { opacity: 0.8; }
+			.phase__number {
+				margin-bottom: 0.5em;
+			}
+			.phase__date {
+				margin-top: 0.25em;
+			}
+			.phase__title {
+				color: black;
+			}
+		}
+	}
+}

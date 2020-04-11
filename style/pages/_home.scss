@@ -1,0 +1,90 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the home page of the site/application.
+// -------------------------------------------------------------------------------
+
+
+#home {
+	.main {
+		flex-direction: column;
+		> section {
+			flex-basis: 100%;
+			width: 100%;
+		}
+		#le-syndicat {
+			#intro {
+				padding-left: $page-p-lg;
+				padding-right: $page-p-sm;
+			}
+			#video {
+				background: black;
+			}
+		}
+		#se-mobiliser {
+			background: black;
+			#actualites {
+				padding-left: $page-p-sm;
+				padding-right: $page-p-lg;
+			}
+			.actualites {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1023px ) {
+	#home {
+		&:before {
+			content:'';
+			display: block;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: $page-b-width;
+			background: var(--primary);
+		}
+		.header.se-mobiliser {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			right: 0;
+			z-index: 2;
+			h2 {
+				width: 100%;
+			}
+			#menu {
+				display: none;
+			}
+		}
+		#actualites {
+			display: none;
+		}
+		#video {
+			border-right: 1rem solid var(--primary);
+		}
+	}
+}
+
+@media screen and (min-width: $breakpoint-md) {
+	#home {
+		.container {
+			overflow-y: hidden;
+		}
+		.main {
+			flex-direction: row;
+			> section {
+				flex-basis: 50%;
+				width: 50%;
+				min-height: 100vh;
+				overflow-y: auto;
+			}
+			#se-mobiliser {
+				background: var(--primary);
+				.actualites { 
+					display: flex;
+				}
+			} 
+		}
+	}
+}

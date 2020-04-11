@@ -1,0 +1,92 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+/// Regular font family
+/// @type List
+$font-stack: -apple-system, BlinkMacSystemFont, Helvetica, Arial, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+ !default;
+
+/// Serif font family
+/// @type List
+$serif: Georgia, serif !default;
+
+
+/// Typographic scale
+/// @type Length
+$type-scale: 1.5; // Perfect Fitfh
+$base-size: 1rem; // (16px)
+
+$font-size-1: 0.875rem; 	// 14px
+$font-size-2: $base-size; // 16px
+$font-size-3: 1.5rem;     // 24px
+$font-size-4: 2rem;       // 32px
+$font-size-5: 3rem;       // 48px
+
+
+
+/// Spacing
+$space-scale: 1.5; // Perfect Fitfh
+$base-space: 1rem; // (16px)
+
+$space-0: 0px;
+$space-1: $base-space / 8;  // 0.2rem (2px)
+$space-2: $base-space / 4;  // 0.25rem (4px)
+$space-3: $base-space / 2;  // 0.5rem (8px)
+$space-4: $base-space;      // 1rem (16px)
+$space-5: $base-space * 1.5;   // 1.5rem (24px)
+$space-6: $base-space * 2;     // 2rem (32px)
+$space-7: $base-space * 3;     // 3rem (48px)
+$space-8: $base-space * 4;     // 4rem (64px)
+
+/// User select color
+/// @type Color
+$select-color: #FFE8B6 !default;
+
+
+:root {
+  --primary: #E95A1C;
+  --primary-dark: #B93A02;
+  --grey-dark: #464646;
+  --grey: #B2B2B2;
+  --grey-light: #F8F8F8;
+}
+
+
+
+/// Page
+/// @type Length
+$page-p-sm: 5vw !default;
+$page-p-lg: 7.5vw !default;
+$page-b-width: 1rem !default;
+
+
+/// Text maximum width
+/// @type Length
+$text-max-width: 42.9ch !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'lg': 1280px,
+  'md': 1024px,
+  'sm': 768px,
+  'xs': 480px
+) !default;
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+
+$breakpoint-text: 480px;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+

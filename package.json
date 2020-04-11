@@ -1,0 +1,25 @@
+{
+  "name": "independants.co",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "date-fns": "^2.12.0",
+    "next": "9.3.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.34",
+    "frontmatter-markdown-loader": "^3.3.0",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  }
+}

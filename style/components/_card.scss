@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+.card {
+	.card__header {
+		background: black;
+		img {
+
+		}
+	}
+	.card__body {
+		background: white;
+		.card__tags {
+			.tag {
+				display: inline-flex;
+			}
+		}
+		.card__title {
+		}
+		.card__date {
+		}
+		.card__intro {
+			a {
+				color: var(--primary);
+				border-bottom: 1px solid currentColor;
+			}
+		}
+	}
+}

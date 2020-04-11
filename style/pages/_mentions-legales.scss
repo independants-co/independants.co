@@ -1,0 +1,17 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the mentions-legales page of the site/application.
+// -------------------------------------------------------------------------------
+
+
+#mentions-legales {
+	.text-container {
+		h3 {
+			color: var(--primary);
+			margin-top: 2.25em;
+		}
+		h4 {
+			font-family: 'protoslab-bold', Helvetica, sans-serif;
+			margin-top: 3em;
+		}
+	}
+}

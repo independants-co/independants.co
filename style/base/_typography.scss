@@ -1,0 +1,252 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the typography of the site/application.
+// -------------------------------------------------------------------------------
+
+/**
+ * Webfonts
+ */
+@font-face {
+  font-family: 'protogrotesk-light';
+  src: url('/fonts/protogroteskweb-light.eot');
+  src: url('/fonts/protogroteskweb-light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/protogroteskweb-light.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'protoslab-bold';
+  src: url('/fonts/protoslabweb-bold.eot');
+  src: url('/fonts/protoslabweb-bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/protoslabweb-bold.woff') format('woff'), url('/fonts/protoslabweb-bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+html {
+  @include interpolate(font-size, 320px, 768px, 12px, 16px);
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'protogrotesk-light', Helvetica, sans-serif;
+  font-display: swap;
+  font-size: 100%;
+}
+
+.slab {
+  font-family: 'protoslab-bold', Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.03em;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-left: -0.04em;
+}
+h1,
+.h1 {
+  font-size: $font-size-5;
+  line-height: 1.125;
+}
+h2,
+.h2 {
+  font-size: $font-size-4;
+  line-height: 1.25;
+  font-weight: normal;
+  margin: 1em 0;
+}
+h3,
+.h3 {
+  font-size: $font-size-3;
+  line-height: 1.333;
+}
+h4,
+.h4 {
+  font-size: $font-size-2;
+  > em {
+    font-style: normal;
+    color: var(--primary);
+  }
+}
+@media screen and (max-width: $breakpoint-xs) {
+  h1,
+  .h1 {
+    font-size: 3.333rem;
+  }
+  h2,
+  .h2 {
+    font-size: 1.666rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.333rem;
+  }
+  h4,
+  .h4 {
+    font-size: 1.15rem;
+  }
+}
+
+// Paragraphs
+p {
+  line-height: 1.5; // (24px)
+  margin: 1.5rem 0;
+}
+
+// Lists
+ul.comma-separated {
+  padding-left: 0 !important;
+  list-style: none;
+  li {
+    display: inline;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  li:not(:last-child):after {
+    content: ', ';
+  }
+  a {
+    text-decoration: none;
+    border-bottom: 0.1em solid currentColor;
+  }
+}
+
+.text-container {
+  h2 {
+    font-family: 'protoslab-bold', Helvetica, sans-serif;
+    margin-top: 3em;
+    text-transform: uppercase;
+  }
+  h3 {
+    color: var(--primary);
+    margin-top: 2.25em;
+  }
+  h4 {
+    font-family: 'protoslab-bold', Helvetica, sans-serif;
+    margin-top: 3em;
+  }
+  p,
+  ul,
+  ol,
+  dl,
+  figure {
+    @include interpolate(font-size, 320px, 768px, 16px, 20px);
+  }
+  ul {
+    list-style: square;
+    ul {
+      list-style: circle;
+    }
+  }
+  ul,
+  ol {
+    padding-left: 1em;
+    li {
+      margin-top: 0.75em;
+      padding-left: 1em;
+    }
+  }
+  p {
+    margin-bottom: 1.5em;
+  }
+  strong {
+    font-weight: normal;
+    font-family: 'protoslab-bold', Helvetica, sans-serif;
+    letter-spacing: -0.02em;
+    // text-decoration: underline solid var(--primary) 0.1em;
+    // text-underline-offset: 3px;
+  }
+  em {
+    font-style: normal;
+  }
+  a:not(.btn) {
+    color: var(--primary);
+    border-bottom: 0.1em solid currentColor;
+    @include on-event {
+      color: var(--primary-dark);
+    }
+  }
+  blockquote {
+    padding-left: 1em;
+    margin: 2em 0px;
+    border-left: 0.1em solid var(--grey);
+    font-family: 'protoslab-bold', Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* external links */
+.external-link:after,
+a[href*="//"]:not(.no-after):not([href*="://www.independants.co"]):not([href*="://independants.co"]):not([href*="localhost"]):after
+{
+  content: '→';
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-style: normal;
+  display: inline-block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: relative;
+  bottom: -0.09em;
+}
+
+/* Back link */
+a.back {
+  display: inline-block;
+}
+a.back:before {
+  content: '←';
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-style: normal;
+  display: inline-block;
+  margin-right: 0.25em;
+}
+
+small,
+.small {
+  font-size: $font-size-1;
+  line-height: 1.685;
+}
+
+.fz-1,
+.fz-1 > * {
+  font-size: $font-size-1;
+}
+.fz-2,
+.fz-2 > * {
+  font-size: $font-size-2;
+}
+.fz-3,
+.fz-3 > * {
+  font-size: $font-size-3;
+}
+.fz-4,
+.fz-4 > * {
+  font-size: $font-size-4;
+}
+.fz-5,
+.fz-5 > * {
+  font-size: $font-size-5;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid currentColor;
+  opacity: 0.4;
+  margin: 2.25rem 0 0;
+}

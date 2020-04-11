@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+div.se-mobiliser {
+  .header {
+    h2:nth-child(2) {
+      // Le syndicat
+      background: white;
+      color: black;
+    }
+    h2:nth-child(2),
+    #menu {
+      padding-left: $page-p-lg;
+    }
+    nav > div {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.header {
+  &.le-syndicat {
+    background: white;
+    h2,
+    #menu {
+      padding-left: $page-p-lg;
+    }
+  }
+  &.se-mobiliser {
+    background: var(--primary);
+    color: white;
+    h2,
+    #menu {
+      padding-left: $page-p-sm;
+    }
+    ul#menu > li a.active,
+    ul#menu > li a:hover {
+      border-bottom-color: var(--primary-dark);
+    }
+  }
+  .nav {
+    h2 {
+      margin: 0;
+      padding-top: 0.75em;
+      padding-bottom: 0.5em;
+      width: 50%;
+      min-height: 50px;
+      & + h2 {
+        padding-left: $page-p-sm;
+        background: var(--primary);
+        color: white;
+      }
+      &[data-id='le-syndicat'] {
+        background: white;
+      }
+    }
+    #menu {
+      > li {
+        margin-bottom: 0.75em;
+        a {
+          padding-bottom: 0.125em;
+          &.active,
+          &:hover {
+            border-bottom: 2px solid var(--primary);
+          }
+        }
+      }
+      > li:not(:last-child) {
+        margin-right: 1.5em;
+      }
+    }
+  }
+}

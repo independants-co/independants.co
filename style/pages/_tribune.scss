@@ -1,0 +1,30 @@
+// -------------------------------------------------------------------------------
+// This file contains all styles related to the tribune page of the site/application.
+// -------------------------------------------------------------------------------
+
+
+#tribune, .tribune {
+	.text-container {
+		h2 {
+			font-size: $font-size-4;
+		}
+		h3 {
+			font-family: 'protoslab-bold', Helvetica, sans-serif;
+			font-size: $font-size-4;
+			text-transform: uppercase;
+			color: black;
+			letter-spacing: -0.02em;
+			margin-top: 3em;
+		}
+		p, blockquote {
+			font-size: $font-size-4;
+			@media screen and (max-width: $breakpoint-xs) {
+				font-size: 1.666rem;
+			}
+		}
+	}
+}
+
+.invert.tribune .text-container h3 {
+	color: white;
+}
