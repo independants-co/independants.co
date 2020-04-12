@@ -1,32 +1,17 @@
-import Head from 'next/head'
 import Link from 'next/link'
 
-import { HeaderMobiliser } from '../../../../components/Header'
-import { Footer } from '../../../../components/Footer'
+import { Layout } from '../../../../components/Layout'
 
 const Page = () => (
-  <>
-    <Head>
-      <title>Informations pratiques • independants.co</title>
-      {/* <meta title="description" content={attributes.description} /> */}
-    </Head>
+  <Layout id="s-informer-agir" title="Informations pratiques" description="" header="mobiliser" blog>
+    <h1 className="slab h2 visually-hidden">Informations pratiques</h1>
 
-    <div id="informations-pratiques" className="h-100 se-mobiliser">
-      <div className="container w-100 max-w-100vw min-h-100vh invert">
-        <HeaderMobiliser active="s-informer-agir" />
+    <Link href="/se-mobiliser/s-informer-agir/covid19">
+      <a className="back mb-4">Retour</a>
+    </Link>
 
-        <main className="main pt-6 p-l-lg p-r-lg">
-          <h1 className="slab h2 visually-hidden">Informations pratiques</h1>
-          <Link href="/se-mobiliser/s-informer-agir/covid19">
-            <a className="back mb-4">Retour</a>
-          </Link>
-          <div className="page"></div>
-        </main>
-
-        <Footer />
-      </div>
-    </div>
-  </>
+    <div className="page"></div>
+  </Layout>
 )
 
 export default Page

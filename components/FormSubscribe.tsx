@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 
-export const FormSubscribe: FunctionComponent<{ active?: string }> = ({ active }) => (
+export const FormSubscribe: FunctionComponent = () => (
   <form action="https://paris.us4.list-manage.com/subscribe/post" method="post" className="">
     <input type="hidden" name="u" value="08e0e028b59ae62a4395e0683" />
     <input type="hidden" name="id" value="37ae40537a" />
@@ -20,7 +20,7 @@ export const FormSubscribe: FunctionComponent<{ active?: string }> = ({ active }
     <div className="text-max-w">
       <p className="grey">
         La saisie de votre adresse email implique que vous recevrez des emails d’information réguliers de notre part.
-        Vous pourrez vous désabonner à tout moment.
+        Vous pourrez vous désabonner à tout moment.{' '}
         <a className="primary" href="https://mailchimp.com/legal/terms/">
           Conditions d’utilisation
         </a>
