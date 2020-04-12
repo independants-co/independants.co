@@ -11,7 +11,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ id, title, description,
       <meta title="description" content={description} />
     </Head>
 
-    <div id={id} className={`h-100 ${header === 'mobiliser' ? 'se-mobiliser' : ''}`}>
+    <div id={id} className={`h-100 ${header === 'mobiliser' ? 'se-mobiliser' : 'le-syndicat'}`}>
       <div className={`container w-100 max-w-100vw min-h-100vh ${header === 'mobiliser' ? 'invert' : ''}`}>
         {header === 'syndicat' ? <HeaderSyndicat active={id} /> : <HeaderMobiliser active={id} />}
 
