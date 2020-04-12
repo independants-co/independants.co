@@ -1,3 +1,12 @@
+require('dotenv').config()
+
+function getAllAllowedEnvironmentVariables() {
+  return Object.entries(process.env).reduce(
+    (vars, [name, value]) => (/^(?:__|NODE_)/.test(name) ? vars : { ...vars, [name]: value }),
+    {},
+  )
+}
+
 module.exports = {
   webpack: (cfg) => {
     cfg.module.rules.push({
@@ -9,5 +18,8 @@ module.exports = {
       },
     })
     return cfg
+  },
+  env: {
+    ...getAllAllowedEnvironmentVariables(),
   },
 }

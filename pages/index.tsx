@@ -1,12 +1,13 @@
+import { FunctionComponent } from 'react'
+import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import { format } from 'date-fns'
-import { fr } from 'date-fns/locale'
 
-import { attributes } from '../content/actualites.md'
+import Content from '../services/content'
 import { FormSubscribe } from '../components/FormSubscribe'
+import { News } from '../components/News'
 
-const Page = () => (
+const Page: FunctionComponent<{ news: any[] }> = ({ news }) => (
   <>
     <Head>
       <title>independants.co</title>
@@ -113,23 +114,7 @@ const Page = () => (
             <section id="actualites" className="pt-2">
               <h2 className="slab">Actualités</h2>
 
-              <div className="actualites grid items-stretch mb-6 w-100">
-                {attributes.news.map(({ title, description, date }, id) => (
-                  <article className="card col-6_lg-12 flex flex-col no-invert">
-                    <div className="card__body flex flex-grow px-5 py-4" key={`news-${id}`}>
-                      <div className="flex flex-col">
-                        <div>
-                          <p className="card__date primary mt-3 mb-3">
-                            {format(new Date(date), 'd MMMM yyyy', { locale: fr })}
-                          </p>
-                          <h3 className="card__title h3 mt-2">{title}</h3>
-                        </div>
-                        <p className="card__intro grey-dark" dangerouslySetInnerHTML={{ __html: description }} />
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <News news={news} isHome />
             </section>
           </section>
         </main>
@@ -137,5 +122,11 @@ const Page = () => (
     </div>
   </>
 )
+
+export const getStaticProps: GetStaticProps = async () => {
+  const news = await Content.getNews()
+
+  return { props: { news } }
+}
 
 export default Page
