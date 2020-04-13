@@ -9,6 +9,8 @@ export const Layout: FunctionComponent<LayoutProps> = ({ id, title, description,
     <Head>
       <title>{title} • independants.co</title>
       <meta title="description" content={description} />
+      {/* TODO: remove before putting in production */}
+      <meta name="robots" content="noindex,nofollow" />
     </Head>
 
     <div id={id} className={`h-100 ${header === 'mobiliser' ? 'se-mobiliser' : 'le-syndicat'}`}>
