@@ -1,0 +1,12 @@
+.DS_Store
+.git
+.next
+/node_modules
+/out
+/coverage
+
+.env
+.env.exemple
+.gitignore
+Dockerfile
+README.MD
