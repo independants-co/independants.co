@@ -20,4 +20,18 @@ export default class Content {
 
     return res.items.map((data) => data.fields)
   }
+
+  public static async getFaqCategories() {
+    const client = Content.getClient()
+    const res = await client.getEntries({ content_type: 'faq_categories' })
+
+    return res.items.map((data) => data.fields)
+  }
+
+  public static async getFaqArticles() {
+    const client = Content.getClient()
+    const res = await client.getEntries({ content_type: 'faq_article' })
+
+    return res.items.map((data) => data.fields)
+  }
 }

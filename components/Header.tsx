@@ -65,6 +65,11 @@ export const HeaderMobiliser: FunctionComponent<{ active?: string }> = ({ active
             <a className={active === 's-informer-agir' ? 'active' : ''}>S'informer &amp; Agir</a>
           </Link>
         </li>
+        <li role="menuitem">
+          <Link href="/se-mobiliser/faq">
+            <a className={active === 'faq' ? 'active' : ''}>FAQ</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   </header>

@@ -6,7 +6,7 @@ const Page = () => (
   <Layout id="s-engager" title={attributes.title} description={attributes.description} header="mobiliser">
     <section className="flex flex-col">
       <h1 className="visually-hidden">S&rsquo;engager</h1>
-      <div className="text-container"></div>
+
       <div className="mb-8">
         <h2 className="slab h1 mb-6">Rejoignez-nous</h2>
 

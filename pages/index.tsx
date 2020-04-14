@@ -107,6 +107,11 @@ const Page: FunctionComponent<{ news: any[] }> = ({ news }) => (
                       <a>S’informer &amp; Agir</a>
                     </Link>
                   </li>
+                  <li role="menuitem">
+                    <Link href="/se-mobiliser/faq">
+                      <a>FAQ</a>
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </header>

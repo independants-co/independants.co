@@ -2,48 +2,47 @@
 // This file contains all styles related to the page of the site/application.
 // -----------------------------------------------------------------------------
 
-
 .page {
-	padding: $space-6 $space-6;
-	.btn {
-		background-color: var(--primary-dark);
-		border: none;
-		color: white !important;
-		&:hover,
-		&:active,
-		&:focus {
-			background: white;
-			color: var(--primary-dark) !important;
-		}
-	}
-	&--white {
-		background-color: white;
-		color: initial;
-		.text-container {
-			a {
-				color: var(--primary);
-				border-bottom-color: var(--primary); 
-			}
-		}
-		.btn {
-			background: var(--primary);
-			border-color: var(--primary) !important;
-			color: white;
-			&:hover,
-			&:focus {
-				background: var(--primary-dark);
-				color: white !important;
-			}
-			&:active {
-				opacity: 0.75;
-			}
-			
-		}
-	}
+  padding: $space-6 $space-6;
+  .btn {
+    background-color: var(--primary-dark);
+    border: none;
+    color: white !important;
+    &.active,
+    &:hover,
+    &:active,
+    &:focus {
+      background: white;
+      color: var(--primary-dark) !important;
+    }
+  }
+  &--white {
+    background-color: white;
+    color: initial;
+    .text-container {
+      a {
+        color: var(--primary);
+        border-bottom-color: var(--primary);
+      }
+    }
+    .btn {
+      background: var(--primary);
+      border-color: var(--primary) !important;
+      color: white;
+      &:hover,
+      &:focus {
+        background: var(--primary-dark);
+        color: white !important;
+      }
+      &:active {
+        opacity: 0.75;
+      }
+    }
+  }
 }
 
 @media (min-width: $breakpoint-lg) {
-	.page {
-		padding: $space-6 $space-8;
-	}
-}	
+  .page {
+    padding: $space-6 $space-8;
+  }
+}
