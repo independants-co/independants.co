@@ -2,7 +2,7 @@ require('dotenv').config()
 
 function getAllAllowedEnvironmentVariables() {
   return Object.entries(process.env).reduce(
-    (vars, [name, value]) => (/^(?:__|NODE_)/.test(name) ? vars : { ...vars, [name]: value }),
+    (vars, [name, value]) => (/^(?:__|NODE_|node_)/.test(name) ? vars : { ...vars, [name]: value }),
     {},
   )
 }

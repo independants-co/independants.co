@@ -6,7 +6,11 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 export const News: FunctionComponent<NewsProps> = ({ news, isHome, collapsible, filter = 'all' }) => (
   <div className={`actualites grid items-stretch mb-6 ${isHome ? 'w-100' : ''}`}>
     {news
-      .filter((article) => filter === 'all' || (filter !== 'all' && article.category.fields.title !== filter))
+      .filter(
+        (article) =>
+          filter === 'all' ||
+          (filter !== 'all' && article.categories.some((category) => category.fields.title === filter)),
+      )
       .map((article, id) => (
         <Article key={id} article={article} isHome={isHome} collapsible={collapsible} />
       ))}
@@ -15,10 +19,11 @@ export const News: FunctionComponent<NewsProps> = ({ news, isHome, collapsible, 
 
 const Article: FunctionComponent<ArticleProps> = ({ article, isHome, collapsible }) => {
   const [opened, setOpened] = useState(false)
+  const articleClass = isHome ? (collapsible ? 'col-12' : 'col-6_lg-12') : 'col-3_lg-6_md-6_sm-6_xs-12'
   const headerClass = collapsible ? { cursor: 'pointer' } : {}
 
   return (
-    <article className={`card ${isHome ? 'col-6_lg-12' : 'col-3_lg-6_md-6_sm-6_xs-12'} flex flex-col no-invert`}>
+    <article className={`card ${articleClass} flex flex-col no-invert`}>
       <div className="card__body flex flex-grow px-5 py-4">
         <div className="flex flex-col">
           <div onClick={() => setOpened(!opened)} style={headerClass}>
@@ -61,5 +66,5 @@ interface Article {
   published_at?: string
   isHome?: boolean
   collapsibled?: boolean
-  category?: any
+  categories?: any[]
 }
